@@ -33,7 +33,7 @@ EOF
 
 cd ./container
 # paste account addresses from output of geth account to into genesis_block.json
-jq --arg account1 ${ACCOUNTID1} --arg account2 ${ACCOUNTID2} '.alloc[$account1] += {balance:"300000000"} | .alloc[$account2] += {balance:"300000000"}' genesis_template.json > genesis_block.json
+jq --arg account1 ${ACCOUNTID1} --arg account2 ${ACCOUNTID2} '.alloc[$account1] += {balance:"300000000000"} | .alloc[$account2] += {balance:"300000000000"}' genesis_template.json > genesis_block.json
 jq ".extraData = \"0x0000000000000000000000000000000000000000000000000000000000000000${ACCOUNTID1}0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"" genesis_block.json > genesis_block2.json
 
 if [ -s genesis_block2.json ]; then
