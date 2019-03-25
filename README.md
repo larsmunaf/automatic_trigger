@@ -1,8 +1,8 @@
 # Automatic Trigger
 
-This project demonstrates the usage of events in Ethereum. Instead of analysing data in ÐApps, the Smart Contract decides if an events is triggered.
+This project demonstrates the usage of events in Ethereum. Instead of analysing data in ÐApps, the Smart Contract decides whether an event is triggered.
 
-The described setup was done with a lot of switching and changing between containers and prompts. The aim is to show that the interaction between private Ethereum nodes works as well as it would run on a single private node.
+The described setup is done with a lot of switching and changing between containers and prompts. The aim is to show that the interaction between private Ethereum nodes works as well as it runs on a single private node. If there are any problems during the setup, do all deployment on a single node.
 
 Truffle was used for reasons of simplicity. Currently, the deployment and Smart Contract execution without Truffle is not working properly.
 
