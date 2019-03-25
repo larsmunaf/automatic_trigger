@@ -41,6 +41,10 @@ Copy the file `./build/contracts/AutomaticHealing.json` into the same directory 
 node overwatch_truffle.json
 ```
 
-Go back to the first container and start the ÐApp that is writing anomaly scores into the Blockchain.
+Go back to the first container and start the ÐApp that is writing anomaly scores into the Blockchain:
+``` sh
+cd client
+node reporter_truffle.js
+```
 
 On the first container, there should be `wrote anomaly score` printed on the screen. The second container prints event values only if they are less than 50.
