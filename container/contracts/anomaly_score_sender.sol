@@ -14,9 +14,9 @@ contract AutomaticHealing {
     {
         score = s;
 
-        //if (score < 50)
-        //{
-        emit anomalyScoreLowerThan50 (msg.sender, score);
-        //}
+        if (score < 50)
+        {
+            emit anomalyScoreLowerThan50 (msg.sender, score);
+        }
     }
 }

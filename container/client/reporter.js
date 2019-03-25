@@ -65,8 +65,8 @@ module.exports = function (callback) {
         		}).on ('error', (err) => {console.log (err)});
         		console.log ('wrote anomaly score');
     		}
-	    })
-    }); 
+	    }).catch ('error', (err) => {console.log (err)});
+    })
 };
 
 module.exports ();

@@ -27,7 +27,7 @@ USER="172.17.0.2:30303"
 i="0"
 while [ $i -lt $1 ];
 do
-    docker run --env BOOTENODE="$ENODE@$USER" trigger-poc &
+    docker run --env BOOTENODE="$ENODE@$USER"  --mount type=bind,source=/home/lm/lars/eth_projects/automatic_trigger/container/client,target=/trigger_app/container/client trigger-poc &
     echo "started container"
     i=$[$i+1]
     sleep 2
