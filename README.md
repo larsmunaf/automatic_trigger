@@ -19,7 +19,7 @@ docker ps
 docker exec -it <insert container id here> bash
 ```
 
-Open another terminal and repeat the procedure for the second container and open Geth prompt:
+Open another terminal and repeat the procedure for the second container and open a Geth prompt:
 ``` sh
 geth attach --datadir ./datadir
 ```
