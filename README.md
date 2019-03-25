@@ -2,7 +2,11 @@
 
 This project demonstrates the usage of events in Ethereum. Instead of analysing data in ÐApps, the Smart Contract decides if an events is triggered.
 
-### 1 Initialization
+The described setup was done with a lot of switching and changing between containers and prompts. The aim is to show that the interaction between private Ethereum nodes works as well as it would run on a single private node.
+
+Truffle was used for reasons of simplicity. Currently, the deployment and Smart Contract execution without Truffle is not working properly.
+
+### Usage
 
 Navigate into this project's home directory. Start 2 Docker instances (+ a bootnode instance). This will take some minutes.
 ``` sh
@@ -20,9 +24,23 @@ Open another terminal and repeat the procedure for the second container and open
 geth attach --datadir ./datadir
 ```
 
-From the there, type:
+Still inside the second container, type:
 ``` sh
 miner.start()
 ```
 
-Return 
+Return (CTRL + D) and switch to our first Docker container. Compile and deploy our contracts:
+``` sh
+cd ./contracts/
+truffle migrate --network testNet --reset
+cd ..
+```
+
+Copy the file `./build/contracts/AutomaticHealing.json` into the same directory on the second Docker container. From there, enter our ÐApp folder by typing `cd ../../client` and start our listener:
+``` sh
+node overwatch_truffle.json
+```
+
+Go back to the first container and start the ÐApp that is writing anomaly scores into the Blockchain.
+
+On the first container, there should be `wrote anomaly score` printed on the screen. The second container prints event values only if they are less than 50.
