@@ -47,4 +47,4 @@ cd client
 node reporter_truffle.js
 ```
 
-On the first container, there should be `wrote anomaly score` printed on the screen. The second container prints event values only if they are less than 50.
+On the first container, there should be constantly `wrote anomaly score` printed on the screen. The second container prints event values only if they are less than 50.
